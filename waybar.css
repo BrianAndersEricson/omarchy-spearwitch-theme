@@ -1,0 +1,4 @@
+@define-color foreground #e2e2e2; /* text */
+@define-color background #080808; /* base */
+@define-color border     #222222; /* surface */
+@define-color accent     #ca64f3; /* magenta */
