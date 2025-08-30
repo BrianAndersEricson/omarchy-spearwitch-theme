@@ -72,7 +72,10 @@ A dark, low-contrast theme with purple accents for Arch Linux (Omarchy) desktop 
 - **Walker** (`walker.css`) - Application launcher styling
 
 ### Editor
-- **Neovim** (`neovim.lua`) - Text editor color configuration
+- **Neovim** (`neovim.lua`) - Full Neovim theme plugin configuration
+  - Complete colorscheme with treesitter support
+  - Plugin integrations for 15+ popular plugins
+  - Available at [BrianAndersEricson/spearwitch.nvim](https://github.com/BrianAndersEricson/spearwitch.nvim)
 
 ### OSD
 - **SwayOSD** (`swayosd.css`) - On-screen display styling
@@ -91,7 +94,27 @@ A dark, low-contrast theme with purple accents for Arch Linux (Omarchy) desktop 
    cat hyprland.conf >> ~/.config/hypr/hyprland.conf
    ```
 
-2. For application-specific installations, refer to each application's documentation on theme configuration.
+2. For **Neovim**, the theme is available as a standalone plugin:
+   
+   ### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
+   ```lua
+   -- Add to your lazy.nvim plugin spec
+   {
+     "BrianAndersEricson/spearwitch.nvim",
+     lazy = false,
+     priority = 1000,
+     config = function()
+       require("spearwitch").setup({
+         -- your configuration
+       })
+       vim.cmd("colorscheme spearwitch")
+     end,
+   }
+   ```
+   
+   Or use the provided `neovim.lua` configuration file directly in your lazy.nvim setup.
+
+3. For other application-specific installations, refer to each application's documentation on theme configuration.
 
 ## Theme Characteristics
 
